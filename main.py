@@ -11,7 +11,8 @@ def menu():
         print("2. Atender siguiente paciente")
         print("3. Ver cola de pacientes")
         print("4. Simulación automática")
-        print("5. Salir")
+        print("5. Emergencia crítica (código rojo)")
+        print("6. Salir")
 
         opcion = input("Selecciona una opción: ")
 
@@ -28,6 +29,14 @@ def menu():
         elif opcion == '4':
             simulacion_automatica()
         elif opcion == '5':
+            nombre = input("Nombre del paciente en emergencia: ")
+            pq.insertar_paciente(nombre, 1)  # urgencia máxima
+            print("🚨 Paciente de emergencia ingresado con prioridad máxima.")
+        elif opcion == '6':
+            print("¿Deseas generar un reporte de pacientes antes de salir? (s/n)")
+            respuesta = input().lower()
+            if respuesta == 's':
+                pq.generar_reporte()
             print("👋 Saliendo del sistema. ¡Gracias!")
             break
         else:

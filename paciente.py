@@ -2,7 +2,7 @@ class Paciente:
     def __init__(self, nombre, urgencia, llegada):
         self.nombre = nombre
         self.urgencia = urgencia
-        self.llegada = llegada  # Número autoincremental
+        self.llegada = llegada  # Número autoincremental (para orden de llegada)
 
     def __lt__(self, otro):
         if self.urgencia != otro.urgencia:

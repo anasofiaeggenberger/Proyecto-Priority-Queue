@@ -18,3 +18,5 @@ def simulacion_automatica():
 
     while pq.cola:
         pq.atender_paciente()
+
+    pq.generar_reporte()

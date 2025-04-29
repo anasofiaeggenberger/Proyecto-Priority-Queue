@@ -1,0 +1,16 @@
+=== REPORTE DE PACIENTES ATENDIDOS ===
+
+cristi - Urgencia: 1
+elena - Urgencia: 3
+jan - Urgencia: 4
+sofi - Urgencia: 5
+
+=== ESTADÍSTICAS ===
+Urgencia 1: 1
+Urgencia 2: 0
+Urgencia 3: 1
+Urgencia 4: 1
+Urgencia 5: 1
+
+Total atendidos: 4
+Pacientes urgentes (1 y 2): 1 (25.00%)

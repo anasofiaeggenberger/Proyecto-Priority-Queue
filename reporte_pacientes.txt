@@ -1,17 +1,22 @@
 === REPORTE DE PACIENTES ATENDIDOS ===
 
-jose - Urgencia: 1
-adrian - Urgencia: 1
-bebeto - Urgencia: 1
-sofi - Urgencia: 2
-martin - Urgencia: 4
+Daniel - Urgencia: 1
+José - Urgencia: 1
+María - Urgencia: 2
+Carlos - Urgencia: 2
+Pedro - Urgencia: 2
+Daniel - Urgencia: 2
+Pedro - Urgencia: 3
+Sofía - Urgencia: 3
+Carlos - Urgencia: 3
+Lucía - Urgencia: 5
 
 === ESTADÍSTICAS ===
-Pacientes de urgencia 1: 3
-Pacientes de urgencia 2: 1
-Pacientes de urgencia 3: 0
-Pacientes de urgencia 4: 1
-Pacientes de urgencia 5: 0
+Pacientes de urgencia 1: 2
+Pacientes de urgencia 2: 4
+Pacientes de urgencia 3: 3
+Pacientes de urgencia 4: 0
+Pacientes de urgencia 5: 1
 
-Total de pacientes atendidos: 5
-Pacientes con urgencia alta (1 y 2): 4 (80.00%)
+Total de pacientes atendidos: 10
+Pacientes con urgencia alta (1 y 2): 6 (60.00%)

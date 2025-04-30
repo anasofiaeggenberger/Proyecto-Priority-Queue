@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cola de Pacientes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Cola de Pacientes (Prioridad)</h1>
+
+    <form action="/agregar" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre del paciente" required>
+        <input type="number" name="prioridad" placeholder="Prioridad (1 es urgente)" required>
+        <button type="submit">Agregar paciente</button>
+    </form>
+
+    <form action="/atender" method="POST" style="margin-top: 1em;">
+        <button type="submit">✅ Atender siguiente paciente</button>
+    </form>
+
+    <h2>Lista actual:</h2>
+    <ul>
+        {% for paciente in pacientes %}
+            <li><strong>{{ paciente.nombre }}</strong> - Prioridad: {{ paciente.prioridad }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

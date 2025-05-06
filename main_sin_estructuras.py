@@ -1,3 +1,9 @@
+# PRIORITY QUEUE SIN ESTRUCTURAS - 3 PACIENTES POR URGENCIA
+
+# ========================
+# Variables por urgencia
+# ========================
+
 # Urgencia 1
 paciente_u1_nombre_1 = ""
 paciente_u1_presente_1 = False

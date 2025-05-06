@@ -52,10 +52,6 @@ conteo_u4 = 0
 conteo_u5 = 0
 historial = ""
 
-# ========================
-# Funciones principales
-# ========================
-
 def insertar_paciente(nombre, urgencia):
     for i in range(1, 4):
         nombre_var = f"paciente_u{urgencia}_nombre_{i}"

@@ -16,7 +16,7 @@ Funciones principales:
 5. Simulación automática de llegadas y atención de pacientes.
 6. Generación automática de un reporte en .txt con historial y estadísticas.
 
-Estructura del proyecto:
+Estructura del Proyecto:
 1. paciente.py: Clase paciente (datos y métodos de comparación).
 2. priority_queue.py: Manejo de la cola de prioridad.
 3. utils.py: Funciones de validación y colores en consola.

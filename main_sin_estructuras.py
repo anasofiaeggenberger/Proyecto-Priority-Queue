@@ -1,9 +1,3 @@
-# PRIORITY QUEUE SIN ESTRUCTURAS - 3 PACIENTES POR URGENCIA
-
-# ========================
-# Variables por urgencia
-# ========================
-
 # Urgencia 1
 paciente_u1_nombre_1 = ""
 paciente_u1_presente_1 = False
@@ -113,7 +107,7 @@ def generar_reporte():
 
 def menu():
     while True:
-        print("\n=== PRIORITY QUEUE (sin estructuras, 3 pacientes por urgencia) ===")
+        print("\n=== 🏥 HOSPITAL - SISTEMA DE PRIORIDADES SIN ESTRUCTURA ===")
         print("1. Registrar nuevo paciente")
         print("2. Atender siguiente paciente")
         print("3. Ver cola de pacientes")

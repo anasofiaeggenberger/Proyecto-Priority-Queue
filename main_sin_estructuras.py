@@ -1,114 +1,89 @@
-paciente_u1_nombre = ""
-paciente_u1_presente = False
+# Urgencia 1
+paciente_u1_nombre_1 = ""
+paciente_u1_presente_1 = False
+paciente_u1_nombre_2 = ""
+paciente_u1_presente_2 = False
+paciente_u1_nombre_3 = ""
+paciente_u1_presente_3 = False
 
-paciente_u2_nombre = ""
-paciente_u2_presente = False
+# Urgencia 2
+paciente_u2_nombre_1 = ""
+paciente_u2_presente_1 = False
+paciente_u2_nombre_2 = ""
+paciente_u2_presente_2 = False
+paciente_u2_nombre_3 = ""
+paciente_u2_presente_3 = False
 
-paciente_u3_nombre = ""
-paciente_u3_presente = False
+# Urgencia 3
+paciente_u3_nombre_1 = ""
+paciente_u3_presente_1 = False
+paciente_u3_nombre_2 = ""
+paciente_u3_presente_2 = False
+paciente_u3_nombre_3 = ""
+paciente_u3_presente_3 = False
 
-paciente_u4_nombre = ""
-paciente_u4_presente = False
+# Urgencia 4
+paciente_u4_nombre_1 = ""
+paciente_u4_presente_1 = False
+paciente_u4_nombre_2 = ""
+paciente_u4_presente_2 = False
+paciente_u4_nombre_3 = ""
+paciente_u4_presente_3 = False
 
-paciente_u5_nombre = ""
-paciente_u5_presente = False
+# Urgencia 5
+paciente_u5_nombre_1 = ""
+paciente_u5_presente_1 = False
+paciente_u5_nombre_2 = ""
+paciente_u5_presente_2 = False
+paciente_u5_nombre_3 = ""
+paciente_u5_presente_3 = False
 
+# Estadisticas
 conteo_u1 = 0
 conteo_u2 = 0
 conteo_u3 = 0
 conteo_u4 = 0
 conteo_u5 = 0
-
 historial = ""
 
 def insertar_paciente(nombre, urgencia):
-    global paciente_u1_nombre, paciente_u1_presente
-    global paciente_u2_nombre, paciente_u2_presente
-    global paciente_u3_nombre, paciente_u3_presente
-    global paciente_u4_nombre, paciente_u4_presente
-    global paciente_u5_nombre, paciente_u5_presente
-
-    if urgencia == 1 and not paciente_u1_presente:
-        paciente_u1_nombre = nombre
-        paciente_u1_presente = True
-        print(f"✅ Paciente {nombre} agregado con urgencia 1.")
-    elif urgencia == 2 and not paciente_u2_presente:
-        paciente_u2_nombre = nombre
-        paciente_u2_presente = True
-        print(f"✅ Paciente {nombre} agregado con urgencia 2.")
-    elif urgencia == 3 and not paciente_u3_presente:
-        paciente_u3_nombre = nombre
-        paciente_u3_presente = True
-        print(f"✅ Paciente {nombre} agregado con urgencia 3.")
-    elif urgencia == 4 and not paciente_u4_presente:
-        paciente_u4_nombre = nombre
-        paciente_u4_presente = True
-        print(f"✅ Paciente {nombre} agregado con urgencia 4.")
-    elif urgencia == 5 and not paciente_u5_presente:
-        paciente_u5_nombre = nombre
-        paciente_u5_presente = True
-        print(f"✅ Paciente {nombre} agregado con urgencia 5.")
-    else:
-        print(f"❌ Ya hay un paciente en urgencia {urgencia}. No se puede agregar otro.")
+    for i in range(1, 4):
+        nombre_var = f"paciente_u{urgencia}_nombre_{i}"
+        presente_var = f"paciente_u{urgencia}_presente_{i}"
+        if not globals()[presente_var]:
+            globals()[nombre_var] = nombre
+            globals()[presente_var] = True
+            print(f"✅ Paciente {nombre} agregado con urgencia {urgencia} (slot {i}).")
+            return
+    print(f"❌ Todos los espacios para urgencia {urgencia} están ocupados.")
 
 def atender_paciente():
-    global paciente_u1_nombre, paciente_u1_presente
-    global paciente_u2_nombre, paciente_u2_presente
-    global paciente_u3_nombre, paciente_u3_presente
-    global paciente_u4_nombre, paciente_u4_presente
-    global paciente_u5_nombre, paciente_u5_presente
     global historial, conteo_u1, conteo_u2, conteo_u3, conteo_u4, conteo_u5
-
-    if paciente_u1_presente:
-        print(f"🚑 Atendiendo a {paciente_u1_nombre} (Urgencia 1)")
-        historial += f"{paciente_u1_nombre} - Urgencia: 1\n"
-        conteo_u1 += 1
-        paciente_u1_nombre = ""
-        paciente_u1_presente = False
-    elif paciente_u2_presente:
-        print(f"🚑 Atendiendo a {paciente_u2_nombre} (Urgencia 2)")
-        historial += f"{paciente_u2_nombre} - Urgencia: 2\n"
-        conteo_u2 += 1
-        paciente_u2_nombre = ""
-        paciente_u2_presente = False
-    elif paciente_u3_presente:
-        print(f"🚑 Atendiendo a {paciente_u3_nombre} (Urgencia 3)")
-        historial += f"{paciente_u3_nombre} - Urgencia: 3\n"
-        conteo_u3 += 1
-        paciente_u3_nombre = ""
-        paciente_u3_presente = False
-    elif paciente_u4_presente:
-        print(f"🚑 Atendiendo a {paciente_u4_nombre} (Urgencia 4)")
-        historial += f"{paciente_u4_nombre} - Urgencia: 4\n"
-        conteo_u4 += 1
-        paciente_u4_nombre = ""
-        paciente_u4_presente = False
-    elif paciente_u5_presente:
-        print(f"🚑 Atendiendo a {paciente_u5_nombre} (Urgencia 5)")
-        historial += f"{paciente_u5_nombre} - Urgencia: 5\n"
-        conteo_u5 += 1
-        paciente_u5_nombre = ""
-        paciente_u5_presente = False
-    else:
-        print("⚠️ No hay pacientes en espera.")
+    for urgencia in range(1, 6):
+        for i in range(1, 4):
+            nombre_var = f"paciente_u{urgencia}_nombre_{i}"
+            presente_var = f"paciente_u{urgencia}_presente_{i}"
+            if globals()[presente_var]:
+                nombre = globals()[nombre_var]
+                print(f"🚑 Atendiendo a {nombre} (Urgencia {urgencia})")
+                historial += f"{nombre} - Urgencia: {urgencia}\n"
+                globals()[nombre_var] = ""
+                globals()[presente_var] = False
+                globals()[f"conteo_u{urgencia}"] += 1
+                return
+    print("⚠️ No hay pacientes en espera.")
 
 def mostrar_cola():
+    hay_pacientes = False
     print("\n📋 Pacientes en espera:")
-    if paciente_u1_presente:
-        print(f" - {paciente_u1_nombre} (Urgencia 1)")
-    if paciente_u2_presente:
-        print(f" - {paciente_u2_nombre} (Urgencia 2)")
-    if paciente_u3_presente:
-        print(f" - {paciente_u3_nombre} (Urgencia 3)")
-    if paciente_u4_presente:
-        print(f" - {paciente_u4_nombre} (Urgencia 4)")
-    if paciente_u5_presente:
-        print(f" - {paciente_u5_nombre} (Urgencia 5)")
-
-    if not any([
-        paciente_u1_presente, paciente_u2_presente, paciente_u3_presente,
-        paciente_u4_presente, paciente_u5_presente
-    ]):
+    for urgencia in range(1, 6):
+        for i in range(1, 4):
+            nombre_var = f"paciente_u{urgencia}_nombre_{i}"
+            presente_var = f"paciente_u{urgencia}_presente_{i}"
+            if globals()[presente_var]:
+                print(f" - {globals()[nombre_var]} (Urgencia {urgencia})")
+                hay_pacientes = True
+    if not hay_pacientes:
         print(" - Ningún paciente registrado.")
 
 def generar_reporte():
@@ -132,7 +107,7 @@ def generar_reporte():
 
 def menu():
     while True:
-        print("\n=== PRIORITY QUEUE (sin estructuras) ===")
+        print("\n=== 🏥 HOSPITAL - SISTEMA DE PRIORIDADES SIN ESTRUCTURA ===")
         print("1. Registrar nuevo paciente")
         print("2. Atender siguiente paciente")
         print("3. Ver cola de pacientes")
@@ -157,7 +132,7 @@ def menu():
             mostrar_cola()
         elif opcion == "4":
             nombre = input("Nombre del paciente de emergencia: ")
-            insertar_paciente(nombre, 1)  # Emergencia = urgencia 1
+            insertar_paciente(nombre, 1)
         elif opcion == "5":
             generar_reporte()
             print("👋 ¡Gracias por usar el sistema!")
@@ -167,4 +142,3 @@ def menu():
 
 if __name__ == "__main__":
     menu()
-

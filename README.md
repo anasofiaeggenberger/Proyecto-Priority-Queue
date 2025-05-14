@@ -56,8 +56,6 @@ PROYECTO-PRIORITY-QUEUE/
 ├── static/
 │   ├── css/
 │   │   └── styles.css           # Estilos personalizados
-│   ├── fonts/                   # Fuentes (si se usan)
-│   └── img/                     # Imágenes (si se usan)
 │
 ├── templates/
 │   ├── index.html               # Página principal

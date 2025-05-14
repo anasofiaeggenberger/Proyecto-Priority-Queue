@@ -32,10 +32,10 @@ def atender_paciente():
         return None
     
 def eliminar_paciente(nombre):
-    global cola_prioridad  # Ensure you are modifying the global priority queue
+    global cola_prioridad  
     for paciente in cola_prioridad:
         if paciente.nombre == nombre:
             cola_prioridad.remove(paciente)
-            heapq.heapify(cola_prioridad)  # Reorganize the heap after removal
+            heapq.heapify(cola_prioridad)  
             return True
     return False

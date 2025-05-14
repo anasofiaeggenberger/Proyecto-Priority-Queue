@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión sin Estructuras</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #43a047;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #66bb6a;
+            color: #ffffff;
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1b5e20;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: #66bb6a;
+            outline: none;
+            box-shadow: 0 0 5px rgba(102, 187, 106, 0.5);
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            background-color: #43a047;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        form button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+        /* Patient List */
+        #lista {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #lista h2 {
+            margin-top: 0;
+            color: #1b5e20;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #f1f8e9;
+            color: #2e7d32;
+            resize: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #a5d6a7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #c8e6c9;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            form, #lista {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gestión de Pacientes sin Estructuras</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Con Estructuras</a></li>
+                <li><a href="/sinestructura">Sin Estructuras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form method="POST" action="/sinestructura/agregar">
+        <label for="nombre">Nombre del paciente:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="urgencia">Nivel de urgencia:</label>
+        <select id="urgencia" name="urgencia" required>
+            <option value="" disabled selected>Seleccione un nivel (1-5)</option>
+            <option value="1">1 - Alta</option>
+            <option value="2">2</option>
+            <option value="3">3 - Media</option>
+            <option value="4">4</option>
+            <option value="5">5 - Baja</option>
+        </select>
+
+        <button type="submit">Agregar Paciente</button>
+    </form>
+
+    <form method="POST" action="/sinestructura/atender">
+        <button type="submit">Atender Paciente</button>
+    </form>
+
+    <div id="lista">
+        <h2>Lista de Pacientes</h2>
+        <textarea readonly>{{ salida }}</textarea>
+    </div>
+
+</body>
+</html>

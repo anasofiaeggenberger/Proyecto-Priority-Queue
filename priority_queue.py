@@ -1,5 +1,5 @@
 import heapq
-from paciente import Paciente
+from paciente1 import Paciente
 
 class PriorityQueue:
     def __init__(self):

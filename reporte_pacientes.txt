@@ -1,0 +1,22 @@
+=== REPORTE DE PACIENTES ATENDIDOS ===
+
+Sofía - Urgencia: 1
+Sofía - Urgencia: 1
+Sofía - Urgencia: 1
+Sofía - Urgencia: 2
+Pedro - Urgencia: 2
+Carlos - Urgencia: 3
+Carlos - Urgencia: 4
+María - Urgencia: 5
+Carlos - Urgencia: 5
+María - Urgencia: 5
+
+=== ESTADÍSTICAS ===
+Pacientes de urgencia 1: 3
+Pacientes de urgencia 2: 2
+Pacientes de urgencia 3: 1
+Pacientes de urgencia 4: 1
+Pacientes de urgencia 5: 3
+
+Total de pacientes atendidos: 10
+Pacientes con urgencia alta (1 y 2): 5 (50.00%)

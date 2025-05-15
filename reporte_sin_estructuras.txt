@@ -1,0 +1,12 @@
+=== REPORTE DE PACIENTES ATENDIDOS ===
+
+
+=== ESTADÍSTICAS ===
+Urgencia 1: 0
+Urgencia 2: 0
+Urgencia 3: 0
+Urgencia 4: 0
+Urgencia 5: 0
+
+Total atendidos: 0
+Pacientes urgentes (1 y 2): 0 (0.00%)
